@@ -1,0 +1,16 @@
+{
+  "date_sauvegarde": "2026-08-31",
+  "note": "Etat du pattern SEO utilisateur du gabarit dynamique EXPERTISES (pageId snatn) AVANT intervention. Pour restaurer : PATCH https://www.wixapis.com/promote/seo/v1/seo-patterns/WIX_DATA_PAGE_ITEM?pageId=snatn avec ce pattern et fieldMask=pattern.",
+  "pattern": {
+    "tags": [
+      {"type":"meta","props":{"name":"description","content":"{{wix-data-page-item.EXPERTISES.mtaDescription}}"},"children":"","custom":false,"disabled":false},
+      {"type":"title","children":"{{wix-data-page-item.EXPERTISES.title}}|{{site.name}}","custom":false,"disabled":false},
+      {"type":"meta","props":{"content":"article","property":"og:type"},"children":"","custom":false,"disabled":false}
+    ]
+  },
+  "autres_patterns_intacts": {
+    "dp82b_clients": "description + title (main-collection-primary-field)",
+    "ejtvw_avocats": "description + title + og:type=profile",
+    "wlqrm_publications": "description + og:type=article"
+  }
+}
