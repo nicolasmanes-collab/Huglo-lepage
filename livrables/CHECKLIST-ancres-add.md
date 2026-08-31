@@ -13,9 +13,28 @@ Corriger le libellé traite donc les deux griefs à la fois : le signal
 sémantique du lien interne, et le critère 6.1 du RGAA sur les libellés non
 explicites hors contexte.
 
-## Groupe 1 : pied de page, 8 boutons, 224 occurrences
+## Groupe 1 : MENU PRINCIPAL, 8 boutons, 224 occurrences
 
-Présents sur 25 pages sur 25. Une correction par bouton les traite partout.
+Correction du 31 août : ces boutons ne sont pas dans le pied de page mais dans
+le menu de navigation du site, celui qui s'ouvre par le bouton ☰ en haut à
+droite. Le code l'établit sans ambiguïté :
+
+```
+data-block-level-container="MenuContainer"
+role="dialog"  aria-label="Site navigation"
+class="wixui-mobile-menu"
+role="list"    wixui-repeater__item
+```
+
+C'est un répéteur de 8 entrées. Dans chaque entrée, le nom de la rubrique est
+du texte non cliquable, et le lien est porté par la flèche voisine, dont le
+libellé est resté sur « Add ».
+
+Ce sont donc les liens du maillage interne principal, présents sur les 25 pages
+du site, qui mènent aux pages piliers sans aucun signal sémantique. C'est le
+point le plus rentable de la liste du client.
+
+Présents sur 25 pages sur 25. Une correction par entrée les traite partout.
 C'est 70 % du volume, à faire en premier.
 
 | Destination | Occurrences | Libellé à mettre | Fait |
