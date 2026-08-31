@@ -96,3 +96,54 @@ curl -s "<url>" | grep -o 'aria-label="Add"' | wc -l
 ```
 
 Attendu : 0 sur les 25 pages. Ligne de base au 31 août : 318 au total.
+
+
+---
+
+# Avancement
+
+## 31 août, après publication du menu : 318 → 118
+
+Mesuré sur les 25 pages en UA Googlebot, méthode de référence (texte du lien
+égal à « Add », scripts écartés).
+
+Les 8 entrées du menu sont réglées, 200 occurrences supprimées. Le champ de
+libellé modifie **le texte du lien et le nom accessible ensemble**, vérifié
+dans le code servi :
+
+```
+/cabinet    texte='Cabinet'    aria-label='Cabinet'
+/equipe     texte='Équipe'     aria-label='Équipe'
+/expertise  texte='Expertises' aria-label='Expertises'
+```
+
+Le signal sémantique et le critère 6.1 du RGAA sont donc traités d'un même
+geste. Rien à reprendre sur ce groupe.
+
+## Reste : 118 occurrences pour environ 11 corrections
+
+| Rang | Groupe | Occurrences | Corrections | Libellé | Fait |
+|---|---|---|---|---|---|
+| 1 | Carrousel avocats | 54 | 1 | connecter le nom accessible au champ du nom, collection EQUIPE | ☐ |
+| 2 | Bouton `/equipe`, gabarit fiche avocat | 12 | 1 | Toute l'équipe | ☐ |
+| 3 | Bouton `/expertise`, gabarit fiche expertise | 12 | 1 | Toutes nos expertises | ☐ |
+| 4 | Cartes expertises, accueil | 12 | 1 | connecter au champ `title`, collection EXPERTISES | ☐ |
+| 5 | Boutons email, gabarit fiche avocat | 9 | 1 | connecter au nom | ☐ |
+| 6 | Boutons LinkedIn, gabarit fiche avocat | 9 | 1 | connecter au nom | ☐ |
+| 7 | Cartes actualités, accueil | 6 | 1 | connecter au titre de l'article | ☐ |
+| 8 | Cartes typologies clients, accueil | 4 | 4 | Entreprises et industries, Collectivités territoriales, Associations et fondations, Particuliers | ☐ |
+
+## Le cas des répéteurs connectés au CMS
+
+Sur ces boutons, le panneau n'affiche pas un champ texte mais « Nom
+accessible », et « Éléments à afficher » vaut « Rien » : le bouton est une zone
+cliquable transparente.
+
+Le nom accessible est une propriété du **modèle d'élément**, partagée par tous
+les items du répéteur. Une saisie manuelle applique donc le même libellé aux
+douze cartes, ce qui a été constaté. Il faut connecter ce nom au champ de la
+collection, par la barre « Connecté au CMS » du panneau.
+
+À défaut, voie de repli : rendre le texte déjà affiché et déjà connecté (le nom
+de l'avocat, l'intitulé de l'expertise) cliquable vers la fiche, et retirer le
+bouton transparent. L'ancre devient alors un vrai texte de lien.
