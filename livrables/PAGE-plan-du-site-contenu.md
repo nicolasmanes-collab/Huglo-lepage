@@ -1,6 +1,6 @@
 # Page « Plan du site » : contenu à intégrer
 
-État du site au 31 août 2026. 84 liens, tous vérifiés en ligne.
+État du site au 31 août 2026. 79 liens, tous vérifiés en ligne.
 
 ## Avertissement d'intégration
 
